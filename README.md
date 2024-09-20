@@ -2,35 +2,64 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Тестовое задание
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Задание
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Реализовать приложение на **Next.js**, которое отображает факты о кошках. Приложение должно содержать следующие элементы:
 
-## Learn More
+1. **Случайный факт о кошках** — в верхней части страницы выводится один случайный факт о котах с возможностью перегенерации факта (новый запрос в API).  
+   Метод API: `/fact`
+2. **Список всех фактов о кошках** — под случайным фактом необходимо вывести список всех фактов с пагинацией.  
+   Метод API: `/facts`
 
-To learn more about Next.js, take a look at the following resources:
+### Приложение должно быть выполнено с использованием:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js** (с использованием маршрутизации и серверной части по необходимости);
+- **TypeScript**;
+- **pnpm** для управления пакетами;
+- **SWR** для получения данных и кэширования (по необходимости).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Основные требования:
 
-## Deploy on Vercel
+### 1. Случайный факт о котах:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- При каждом новом заходе на страницу или обновлении страницы, в верхней части сайта отображается случайный факт.
+- Есть возможность перегенерации факта.
+- Возможность перейти к предыдущему или следующему факту. (Кнопки "вперед" или "назад" можно разместить как удобно, они не указаны в макете).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. Список фактов о котах:
+
+- Под случайным фактом должен быть расположен полный список всех фактов с поддержкой пагинации.
+- На каждой странице пагинации должно отображаться не более **10 фактов**.
+- Переход между страницами пагинации не должен обновлять всю страницу (использовать клиентскую навигацию).
+
+### 3. Загрузка данных:
+
+- Данные о фактах нужно взять с открытого **Cat Facts API**.
+- Для запроса данных необходимо использовать **SWR** (в тех случаях, где это уместно).
+
+### 4. Пагинация:
+
+- Под фактами о кошках должны быть кнопки с номерами страниц.
+- (К сожалению, кнопки не указаны на макете, их можно разместить по своему усмотрению).
+
+### 5. Стиль и дизайн:
+
+- Есть примерный макет, как должна выглядеть страница (повторение макета не обязательно).
+- **Цель** этого задания — не проверка навыков верстки.
+- Картинка сгенерирована в ChatGPT, поэтому она может иметь дефекты.
+- **Шрифт**: Inknut Antiqua.
+
+## Дополнительные требования (по желанию):
+
+- Добавление спиннера или индикатора загрузки во время получения данных через SWR.
+
+## Критерии оценки:
+
+1. Чистота и понятность кода (желательно придерживаться принципов чистого кода).
+2. Использование функциональных возможностей **Next.js**, **TypeScript** и **SWR**.
+3. Организация архитектуры проекта.
+4. Скорость загрузки сайта.
