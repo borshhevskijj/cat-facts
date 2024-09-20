@@ -13,10 +13,28 @@ const RandomFact = () => {
 
   useEffect(() => {
     if (data) {
-      setFacts((prev) => [...prev, data.fact]);
-      setCurrentFactIndex(facts.length);
+      if (currentFactIndex < facts.length - 1) {
+        setFacts((prev) => {
+          const facts = [...prev];
+          // const before = facts.slice(0, currentFactIndex + 1).map((fact) => fact.substring(0, 15));
+          // const after = facts.slice(currentFactIndex).map((fact) => fact.substring(0, 15)); //test
+          // const updatedFacts = [...before, data.fact.substring(0, 15), ...after];
+          facts.splice(currentFactIndex + 1, 0, data.fact);
+          console.log(facts.map((fact) => fact.substring(0, 15)));
+          setCurrentFactIndex(currentFactIndex + 1);
+          return facts;
+        });
+        // setCurrentFactIndex(currentFactIndex+1)
+        console.log("currentFactIndex > facts.length - 1");
+      } else {
+        console.log("else");
+        setFacts((prev) => [...prev, data.fact]);
+        console.log(facts.map((fact) => fact.substring(0, 15)));
+        setCurrentFactIndex(facts.length);
+      }
     }
   }, [data]);
+  // console.log(currentFactIndex, facts.length - 1);
 
   const nextFact = () => {
     if (currentFactIndex + 1 < facts.length) {
