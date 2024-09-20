@@ -1,0 +1,24 @@
+.randomFactContainer{
+    display: flex;
+    width: 100%;
+}
+.layout{
+    display: flex;
+    flex-direction: row;
+}
+.layout header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    min-height: 40%;
+    width: 100%;
+}
+.container{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 25px;
+}

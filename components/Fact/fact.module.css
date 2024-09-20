@@ -1,0 +1,10 @@
+.fact{
+    flex: 1 1 46%;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px 15px;
+    background-color: bisque;
+}
+.fact.randomFact{
+    background-color: aqua;
+}

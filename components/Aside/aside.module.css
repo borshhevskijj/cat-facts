@@ -1,0 +1,18 @@
+.aside{
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 150px;
+    min-height: 100dvh;
+    background-image: url('/images/catBg.webp');
+    background-color: inherit;
+    background-repeat: repeat;
+    background-size: 65px 65px;
+    background-position: left top;
+}
+
+.aside.left{
+    background-position: right top;
+}
+.aside.right{
+    background-position: left top;
+}
